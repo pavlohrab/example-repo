@@ -1,6 +1,12 @@
 import sys
 
-def main():
-    print(int(sys.argv[1]) + int(sys.argv[2]))
+def main(a : int, b : int) -> int:
+	summed_ints = a + b
+	print("Ints sum up to a total of:", summed_ints, sep="\t")
+	return summed_ints
 
-main()
+
+args = [ int(arg) for arg in sys.argv[1:] ]
+if len(args) >= 2:
+	result = main(args[0], args[1])
+
